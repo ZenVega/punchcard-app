@@ -1,3 +1,6 @@
-.PunchArea h1{
-  color: var(--text-color-light)
+.PunchArea {
+  border-top: dashed var(--extra-color);
+}
+.PunchArea h3{
+  color: var(--extra-color);
 }

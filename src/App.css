@@ -29,19 +29,21 @@
 }
 
 .Rider{
-  height:10%;
-  background-color: var(--rider-bg-color);
+  height:6%;
+  border-bottom: dashed var(--rider-bg-color);
+  border-top: dashed var(--rider-bg-color);
+  background-color: var(--main-bg-color);
   color: var(--text-color-light);
 }
 
 .MainArea{
-  height:70%;
+  height:68%;
   background-color: var(--main-bg-color);
 }
 
 .PunchArea{
-  height:10%;
-  background-color: var(--extra-color);
+  height:15%;
+  background-color: var(--main-bg-color);
   color: var(--text-color-light);
 }
 
