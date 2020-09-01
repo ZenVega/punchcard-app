@@ -1,8 +1,9 @@
 import React from 'react';
+import './PunchArea.css'
 
 const PunchArea = (props) => {
   return(
-    <div id="punchArea">
+    <div className="PunchArea">
       <h1>PUNCHAREA</h1>
     </div>
   )

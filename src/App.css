@@ -1,6 +1,16 @@
+:root {
+  --text-color:#2E3532;
+  --text-color-light:#E0E2DB;
+  --header-bg-color:#E0E2DB;
+  --rider-bg-color: #468C98;
+  --main-bg-color: #E0E2DB;
+  --punch-bg-color: #D2D4C8;
+  --extra-color:#8B2635;
+}
 *{
   box-sizing: 0;
   margin:0;
+  color:var(--text-color);
 }
 
 .App {
@@ -10,6 +20,28 @@
   border: solid 2px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.Header{
+  height:7%;
+  background-color: var(--header-bg-color);
+}
+
+.Rider{
+  height:10%;
+  background-color: var(--rider-bg-color);
+  color: var(--text-color-light);
+}
+
+.MainArea{
+  height:70%;
+  background-color: var(--main-bg-color);
+}
+
+.PunchArea{
+  height:10%;
+  background-color: var(--extra-color);
+  color: var(--text-color-light);
 }
 

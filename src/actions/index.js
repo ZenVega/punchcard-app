@@ -20,3 +20,11 @@ export const showToday = (bool) => {
     payload: bool
   }
 }
+
+export const setRiderBtn = obj => {
+  return{
+    type: 'SET_RIDER_BTN',
+    payload: obj
+  }
+}
+

@@ -10,7 +10,7 @@ const MainArea = () => {
   const {showSessions, showToday, showTimer} = useSelector(state => state.rider);
 
   return(
-    <div>
+    <div className="MainArea">
       {showSessions && <Sessions/>}  
       {showToday && <Today/>}  
       {showTimer && <Timer/>}  

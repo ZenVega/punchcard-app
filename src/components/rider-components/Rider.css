@@ -1,10 +1,25 @@
-#rider{
+.Rider{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-#chapter{
-  border:solid 2px grey;
-  padding:5px;
+.riderBtn{
+  display: flex;
+  align-items: center;
+  border:solid 2px var(--text-color-light);
+  padding:0 5px;
   margin:5px;
+  height:30px;
+}
+
+.riderBtn:hover{
+  border:solid 2px grey;
+  background-color: var(--text-color-light);
+  cursor: pointer;
+}
+
+.active{
+  color:white;
+  background-color: var(--text-color-light);
 }

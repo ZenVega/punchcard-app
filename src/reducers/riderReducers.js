@@ -24,3 +24,18 @@ export const showToday = (state = false, action) => {
         return state
      }
   }
+
+const riderBtnInitialState = {
+  sessions: 'riderBtn',
+  timer: 'riderBtn active',
+  today: 'riderBtn'
+}
+
+export const setRiderBtn = (state = riderBtnInitialState, action) => {
+  switch(action.type){
+    case 'SET_RIDER_BTN':
+        return state = action.payload;
+      default:
+        return state
+     }
+  }

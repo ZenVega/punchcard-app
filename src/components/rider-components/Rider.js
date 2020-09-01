@@ -1,19 +1,16 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import {showSessions, showTimer, showToday} from './../../actions/index'
+import { useSelector } from 'react-redux';
 
 import './Rider.css'
 import Chapter from './Chapter'
 
 const Rider = () => {
-  const dispatch = useDispatch();
-  
+  const setRiderBtn = useSelector(state => state.rider.setRiderBtn);
   return(
-    <div id="rider">
-     <Chapter id="1" name="Sessions" />
-     <Chapter id="2" activate="showTimer" name="Timer" />
-     <Chapter id="3" activate="showToday" name="Today's Session" />
+    <div className="Rider">
+     <Chapter className={setRiderBtn.sessions} id="1" name="Sessions" />
+     <Chapter className={setRiderBtn.timer} id="2" name="Timer" />
+     <Chapter className={setRiderBtn.today} id="3" name="Today's Session" />
     </div>
   )
 }

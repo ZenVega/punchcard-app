@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 
-import {showSessions, showTimer, showToday} from './riderReducers'
+import {showSessions, showTimer, showToday, setRiderBtn} from './riderReducers'
 
 const rider = combineReducers({
   showSessions,
   showTimer,
-  showToday
+  showToday,
+  setRiderBtn
 })
 
 
