@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ProjectSwitch from './timer-components/ProjectSwitch'
-import TimeCounter from './timer-components/TimeCounter'
-import StartBtn from './timer-components/StartBtn'
+import ProjectSwitch from './ProjectSwitch'
+import TimeCounter from './TimeCounter'
+import StartBtn from './StartBtn'
 
 const Timer = () => {
   return(

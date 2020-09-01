@@ -1,24 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 
-import Rider from './components/Rider.js'
-import Sessions from './components/Sessions.js'
-import TodaySession from './components/TodaySession.js'
-import Timer from './components/Timer.js'
+import Rider from './components/rider-components/Rider.js'
+import MainArea from './components/MainArea';
+import PunchArea from './components/puncharea-components/PunchArea.js'
 
 function App() {
-  const [showSessions, setshowSessions] = useState(false);
-  const [showTodaySession, setshowTodaySession] = useState(false);
-  const [showTimer, setshowTimer] = useState(true);
+
   
   return (
     <div className="App">
-      Here comes the App soon
-      <h1>The App is gonna show Here</h1>
+      <h1>PUNCHCARD</h1>
       <Rider/>
-      {showSessions && <Sessions/>}  
-      {showTodaySession && <TodaySession/>}  
-      {showTimer && <Timer/>}  
+      <MainArea/>
+      <PunchArea/>
     </div>
   );
 }

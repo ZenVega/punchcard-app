@@ -1,0 +1,10 @@
+#rider{
+  display: flex;
+  justify-content: center;
+}
+
+#chapter{
+  border:solid 2px grey;
+  padding:5px;
+  margin:5px;
+}

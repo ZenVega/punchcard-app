@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodaySession = () => {
+const Today = () => {
   return(
     <div>
       Here is the TodaySessionsPage
@@ -8,4 +8,4 @@ const TodaySession = () => {
   )
 }
 
-export default TodaySession;
+export default Today;
