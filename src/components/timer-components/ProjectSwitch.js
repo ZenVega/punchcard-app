@@ -1,9 +1,11 @@
 import React from 'react';
-import Autofill from './Autofill'
+import CurrentProject from './CurrentProject'
 const ProjectSwitch = () => {
   return(
-    <div>
-      <Autofill/>
+    <div className="projectSwitch">
+      <CurrentProject/>
+      <div id="changeProjectBtn" className="projectSwitchBtn">↔️</div>
+      <div id="addProjectBtn" className="projectSwitchBtn">+</div>
     </div>
   )
 }

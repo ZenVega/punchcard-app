@@ -44,3 +44,19 @@ export const updateRunningTime = obj => {
   }
 }
 
+export const addNewProject = (id,obj) => {
+  return{
+    type: 'ADD_NEW_PROJECT',
+    id: id,
+    payload: obj
+  }
+}
+
+export const changeCurrentProject = (id,obj) => {
+  return{
+    type: 'CHANGE_CURRENT_PROJECT',
+    id: id,
+    payload: obj
+  }
+}
+

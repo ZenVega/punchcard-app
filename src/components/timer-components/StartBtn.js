@@ -2,6 +2,9 @@
 import React, {useState, useEffect} from 'react'
 import {useSelector , useDispatch} from 'react-redux'
 import {toggleStartBtn, updateRunningTime} from './../../actions/index'
+const { v4: generateID } = require('uuid');
+
+const newID = generateID()
 
 const StartBtn = () => {
   const dispatch = useDispatch();

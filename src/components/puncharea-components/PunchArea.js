@@ -4,7 +4,7 @@ import './PunchArea.css'
 const PunchArea = (props) => {
   return(
     <div className="PunchArea">
-      <h3>PUNCH AREA</h3>
+      <h1>PUNCH CARD</h1>
     </div>
   )
 }

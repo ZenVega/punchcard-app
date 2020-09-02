@@ -23,17 +23,4 @@ const timeRunningInitialState = {
   }
 
 
-  const projectsInitialState = {
-    seconds:0,
-    minutes:0,
-    hours:0
-  }
-  
-    export const projects = (state = projectsInitialState, action) => {
-    switch(action.type){
-      case 'ADD_NEW PROJECT':
-          return state = action.payload;
-        default:
-          return state
-       }
-    }
+ 
