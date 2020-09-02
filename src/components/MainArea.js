@@ -1,5 +1,5 @@
-import React, {useState}  from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React  from 'react';
+import { useSelector } from 'react-redux';
 
 import Sessions from './sessions-components/Sessions.js'
 import Today from './todaysession-components/Today.js'

@@ -7,10 +7,10 @@
 .riderBtn{
   display: flex;
   align-items: center;
-  border:solid 2px var(--text-color-light);
   padding:0 5px;
   margin:5px;
   height:30px;
+  color: var(--text-color-light);
 }
 
 .riderBtn:hover{
@@ -20,6 +20,7 @@
 }
 
 .active{
-  color:white;
-  background-color: var(--text-color-light);
+  border-top: solid var(--text-color);
+  border-left: solid var(--text-color);
+  border-right: solid var(--text-color);
 }

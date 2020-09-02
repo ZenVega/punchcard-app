@@ -28,3 +28,19 @@ export const setRiderBtn = obj => {
   }
 }
 
+//TIMER ACTIONS
+
+export const toggleStartBtn = bool => {
+  return{
+    type: 'TOGGLE_START_BTN',
+    payload: bool
+  }
+}
+
+export const updateRunningTime = obj => {
+  return{
+    type: 'UPDATE_RUNNING_TIME',
+    payload: obj
+  }
+}
+

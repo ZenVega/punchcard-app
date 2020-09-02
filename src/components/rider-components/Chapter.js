@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import {showSessions, showTimer, showToday, setRiderBtn} from './../../actions/index'
@@ -8,12 +8,10 @@ const Chapter = (props) => {
 
   const switchChapter = (id) => {
 
-    dispatch(showSessions(false))
-    dispatch(showTimer(false))
-    dispatch(showToday(false))
-    
     if(id == 1){
       dispatch(showSessions(true))
+      dispatch(showTimer(false))
+      dispatch(showToday(false))
       dispatch(setRiderBtn({
         sessions: 'riderBtn active',
         timer: 'riderBtn',
@@ -21,6 +19,8 @@ const Chapter = (props) => {
       }))
     } else if(id == 2){
       dispatch(showTimer(true))
+      dispatch(showSessions(false))
+      dispatch(showToday(false))
       dispatch(setRiderBtn({
         sessions: 'riderBtn',
         timer: 'riderBtn active',
@@ -28,6 +28,8 @@ const Chapter = (props) => {
       }))
     } else if(id == 3){
       dispatch(showToday(true))
+      dispatch(showSessions(false))
+      dispatch(showTimer(false))
       dispatch(setRiderBtn({
         sessions: 'riderBtn',
         timer: 'riderBtn',
