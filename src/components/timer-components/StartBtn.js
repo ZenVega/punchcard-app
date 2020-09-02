@@ -9,7 +9,6 @@ const StartBtn = () => {
   //CHANGE BUTTON STATE
 
   let buttonStateActivity = useSelector(state => state.timer.startBtnStateActive);
-  console.log('activity', buttonStateActivity)
   let currentTime = useSelector(state => state.timer.timeRunning);
  
   let buttonState = 'startBtnInactive'
@@ -24,31 +23,35 @@ const StartBtn = () => {
   let {seconds} = currentTime;
   let {minutes} = currentTime;
   let {hours} = currentTime;
-  let timerRunning = null;
   
   const [timerActive, setTimerActive] = useState(false);
-
+  
   const toggleTimer = () => {
     if(timerActive){
-      setTimerActive(false)
+      setTimerActive(false);
     } else {
       setTimerActive(true);
+      seconds = 0;
+      minutes = 0;
+      hours = 0;
+      dispatch(updateRunningTime({
+        seconds,
+        minutes,
+        hours
+      }))
+
     }
   }
-
-useEffect(() => {
-  if (buttonStateActivity) {
-    console.log('active')
-    seconds = currentTime.seconds;
-    minutes = currentTime.minutes;
-    hours = currentTime.hours;
-    timerRunning = setInterval(incrementTimer, 1000);
-  } else if (!buttonStateActivity) {
-    console.log('inactive')
-    clearInterval(timerRunning);
-  }
-  return () => clearInterval(timerRunning);
-}, []);
+  
+  useEffect(() => {
+    let timerRunning = null;
+    if (buttonStateActivity) {
+      timerRunning = setInterval(incrementTimer, 1000);
+    } else if (!buttonStateActivity) {
+      clearInterval(timerRunning);
+    }
+    return () => clearInterval(timerRunning);
+  });
 
 const incrementTimer = () => {
   seconds++;

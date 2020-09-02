@@ -1,9 +1,9 @@
 import React from 'react';
-
+import Autofill from './Autofill'
 const ProjectSwitch = () => {
   return(
     <div>
-      Choose your project here
+      <Autofill/>
     </div>
   )
 }

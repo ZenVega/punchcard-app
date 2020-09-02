@@ -14,13 +14,14 @@
 }
 
 .riderBtn:hover{
-  border:solid 2px grey;
-  background-color: var(--text-color-light);
+  background-color: var(--extra-color);
   cursor: pointer;
 }
 
-.active{
-  border-top: solid var(--text-color);
-  border-left: solid var(--text-color);
-  border-right: solid var(--text-color);
+.active {
+  background-color: var(--extra-color);
+}
+
+.active h3{
+  color: var(--text-color-light);
 }
