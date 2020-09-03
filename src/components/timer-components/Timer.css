@@ -12,10 +12,23 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 #current-project{
   margin-left:64px;
   width:200px;
   border-bottom: solid var(--text-color);
+}
+
+#current-project-input{
+  background-color: var(--main-bg-color);
+  border: unset;
+  font-size: 20px;
+  color:var(--text-color);
+}
+
+#current-project-input::placeholder {
+  color: var(--text-color);
+  opacity: 1; 
 }
 
 .project-switch-btn{

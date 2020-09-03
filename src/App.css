@@ -28,7 +28,7 @@
 
 .rider{
   height:6%;
-  border-bottom: solid var(--extra-color);
+  border-bottom: solid 3px var(--extra-color);
   background-color: var(--main-bg-color);
   color: var(--text-color-light);
 }

@@ -1,7 +1,9 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import {showProjectList} from './../../actions/index'
 
 const CurrentProject = () => {
+  const dispatch = useDispatch();
   const currentProjectID = useSelector(state=> state.data.currentProject);
   const projects = useSelector(state=> state.data.projects);
 
@@ -10,7 +12,11 @@ const CurrentProject = () => {
   
   return(
   <div id="current-project" >
-    <h3>{projectTitle}</h3>
+    <input
+      id="current-project-input"
+      placeholder={projectTitle}
+      onClick={()=>dispatch(showProjectList(true))}
+    />
   </div>
   )
   
