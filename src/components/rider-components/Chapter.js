@@ -13,27 +13,27 @@ const Chapter = (props) => {
       dispatch(showTimer(false))
       dispatch(showToday(false))
       dispatch(setRiderBtn({
-        sessions: 'riderBtn active',
-        timer: 'riderBtn',
-        today: 'riderBtn'
+        sessions: 'rider-btn active',
+        timer: 'rider-btn',
+        today: 'rider-btn'
       }))
     } else if(id == 2){
       dispatch(showTimer(true))
       dispatch(showSessions(false))
       dispatch(showToday(false))
       dispatch(setRiderBtn({
-        sessions: 'riderBtn',
-        timer: 'riderBtn active',
-        today: 'riderBtn'
+        sessions: 'rider-btn',
+        timer: 'rider-btn active',
+        today: 'rider-btn'
       }))
     } else if(id == 3){
       dispatch(showToday(true))
       dispatch(showSessions(false))
       dispatch(showTimer(false))
       dispatch(setRiderBtn({
-        sessions: 'riderBtn',
-        timer: 'riderBtn',
-        today: 'riderBtn active'
+        sessions: 'rider-btn',
+        timer: 'rider-btn',
+        today: 'rider-btn active'
       }))
     }
   }

@@ -14,11 +14,11 @@ const StartBtn = () => {
   let buttonStateActivity = useSelector(state => state.timer.startBtnStateActive);
   let currentTime = useSelector(state => state.timer.timeRunning);
  
-  let buttonState = 'startBtnInactive'
+  let buttonState = 'start-btn-inactive'
   if(buttonStateActivity){
-    buttonState = 'startBtnActive'
+    buttonState = 'start-btn-active'
   } else {
-    buttonState = 'startBtnInactive'
+    buttonState = 'start-btn-inactive'
   }
 
   //START TIMER

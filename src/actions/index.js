@@ -1,3 +1,19 @@
+//SETTINGS ACTIONS
+
+export const showProjectAdder = bool => {
+  return{
+    type: 'SHOW_PROJECT_ADDER',
+    payload: bool
+  }
+}
+
+export const showProjectList = bool => {
+  return{
+    type: 'SHOW_PROJECT_LIST',
+    payload: bool
+  }
+}
+
 //RIDER ACTIONS
 
 export const showSessions = (bool) => {

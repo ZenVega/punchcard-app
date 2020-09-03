@@ -1,10 +1,10 @@
-.Rider{
+.rider{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.riderBtn{
+.rider-btn{
   display: flex;
   align-items: center;
   padding:0 5px;
@@ -13,7 +13,7 @@
   color: var(--text-color-light);
 }
 
-.riderBtn:hover{
+.rider-btn:hover{
   background-color: var(--extra-color);
   cursor: pointer;
 }

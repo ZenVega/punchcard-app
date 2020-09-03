@@ -7,7 +7,7 @@ import StartBtn from './StartBtn'
 
 const Timer = () => {
   return(
-    <div className="Timer">
+    <div className="timer">
       <ProjectSwitch/> 
       <StartBtn/>
       <TimeCounter/>

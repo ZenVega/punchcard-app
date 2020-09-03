@@ -13,7 +13,7 @@
   color:var(--text-color);
 }
 
-.App {
+.app {
   margin-top:20px;
   text-align: center;
   width:360px;
@@ -25,19 +25,19 @@
 }
 
 
-.Rider{
+.rider{
   height:6%;
   border-bottom: solid var(--extra-color);
   background-color: var(--main-bg-color);
   color: var(--text-color-light);
 }
 
-.MainArea{
+.main-area{
   height:68%;
   background-color: var(--main-bg-color);
 }
 
-.PunchArea{
+.punch-area{
   height:25%;
   background-color: var(--main-bg-color);
   color: var(--text-color-light);

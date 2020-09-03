@@ -7,7 +7,7 @@ import Chapter from './Chapter'
 const Rider = () => {
   const setRiderBtn = useSelector(state => state.rider.setRiderBtn);
   return(
-    <div className="Rider">
+    <div className="rider">
      <Chapter className={setRiderBtn.sessions} id="1" name="Sessions" />
      <Chapter className={setRiderBtn.timer} id="2" name="Timer" />
      <Chapter className={setRiderBtn.today} id="3" name="Today's Session" />

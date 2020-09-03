@@ -31,7 +31,7 @@ const TimeCounter = () => {
   }
 
   return(
-    <div id="TimeCounter">
+    <div id="time-counter">
       {displayHours + ':' + displayMinutes + ':' + displaySeconds}
     </div>
   )

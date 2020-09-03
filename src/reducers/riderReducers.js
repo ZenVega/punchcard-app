@@ -26,9 +26,9 @@ export const showToday = (state = false, action) => {
   }
 
 const riderBtnInitialState = {
-  sessions: 'riderBtn',
-  timer: 'riderBtn active',
-  today: 'riderBtn'
+  sessions: 'rider-btn',
+  timer: 'rider-btn active',
+  today: 'rider-btn'
 }
 
 export const setRiderBtn = (state = riderBtnInitialState, action) => {
