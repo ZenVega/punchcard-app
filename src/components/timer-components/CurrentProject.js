@@ -7,10 +7,6 @@ const CurrentProject = () => {
 
   const projectTitle = currentProjectID? projects[currentProjectID].name : 'add new project';
 
-  console.log(projects)
-  console.log(currentProjectID)
-  console.log(projects[currentProjectID])
-
   
   return(
   <div id="current-project" >

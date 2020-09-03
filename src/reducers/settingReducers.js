@@ -1,4 +1,4 @@
-export const showProjectAdder = (state = true, action) => {
+export const showProjectAdder = (state = false, action) => {
   switch(action.type){
     case 'SHOW_PROJECT_ADDER':
         return state = action.payload;
@@ -7,7 +7,7 @@ export const showProjectAdder = (state = true, action) => {
      }
   }
 
-  export const showProjectList = (state = false, action) => {
+  export const showProjectList = (state = true, action) => {
   switch(action.type){
     case 'SHOW_PROJECT_LIST':
         return state = action.payload;

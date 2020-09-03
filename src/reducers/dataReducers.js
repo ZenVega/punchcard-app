@@ -19,7 +19,8 @@ const projectsInitialState = {
   '43635sdf7ghsdesdfsfsd':
   {
     name: 'Aeroplane'
-  }
+  },
+  projectIDs:['asdsafshf5436357ghe', 'dsaasfdshfdfg5df436357ghe', '43635sdf7ghsdesdfsfsd']
 }
 
 export const projects = (state = projectsInitialState, action) => {
@@ -27,7 +28,8 @@ switch(action.type){
   case 'ADD_NEW_PROJECT':
       return {
         ...state, 
-          [action.id] : action.payload
+          [action.id] : action.payload,
+          projectIDs: state.projectIDs.concat(action.id)
       }
     default:
       return state

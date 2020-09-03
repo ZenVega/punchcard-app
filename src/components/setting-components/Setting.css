@@ -9,7 +9,26 @@
 
 /* PROJECT LIST */
 .project-list{
-  
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width:186px;
+  max-height:400px;
+  margin:115px 0px 0 80px ;
+  border: solid 3px var(--text-color);
+  background-color: var(--main-bg-color);
+  text-align: left;
+  padding:5px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.project-tag:hover{
+  background-color: var(--extra-color);
+}
+
+.project-tag:hover .project-tag-name{
+    color: var(--main-bg-color);
 }
 
 /* PROJECT ADDER */
@@ -39,7 +58,10 @@
 #project-name-input{
   font-size: 20px;
   width: 300px;
-  
+}
+
+#name-error{
+  color:var(--extra-color);
 }
 
 #project-info-input{

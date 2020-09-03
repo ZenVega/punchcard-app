@@ -1,30 +1,45 @@
 import React, {useState} from 'react';
 import './Setting.css'
-import {useDispatch} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {showProjectAdder, addNewProject, changeCurrentProject} from './../../actions/index'
 const { v4: generateID } = require('uuid');
 
 
 const ProjectAdder = () => {
+  
   const dispatch = useDispatch();
-
+  const projects = useSelector(state=> state.data.projects)
   const [projectName, setProjectName] = useState('');
   const [additionalInfo, setAdditionalInfo] = useState('');
+  const [nameError, setNameError] = useState('');
+  
 
 
   const generateNewProject = () => {
-    const id = generateID();
-    dispatch(addNewProject(
-      id, {
-        name: projectName,
-        info: additionalInfo
-      }
-    ))
-    dispatch(changeCurrentProject(id))
+    let match = projects.projectIDs.find(id => projects[id].name === projectName);
+
+    if(match){
+      setNameError("A project with this name already Exists");
+      match = !match;
+      return
+    } else {
+      const id = generateID();
+      const date = new Date().toISOString();
+      dispatch(addNewProject(
+        id, {
+          name: projectName,
+          info: additionalInfo,
+          created: date,
+          lastUsed: date
+        }
+      ))
+      dispatch(changeCurrentProject(id))
+      dispatch(showProjectAdder(false));
+    }
   }
 
   const clickHandler = () => {
-    dispatch(showProjectAdder(false));
+    
     generateNewProject()
   }
   
@@ -52,6 +67,7 @@ const ProjectAdder = () => {
         type="text"
         onChange={nameChangeHandler}
         />
+      <h5 id="name-error">{nameError}</h5>
     </div>
     <div className="content-wrapper">
       <h3>Additional info</h3>
