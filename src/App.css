@@ -3,9 +3,11 @@
   --text-color-light:#E0E2DB;
   --header-bg-color:#E0E2DB;
   --rider-bg-color: #468C98;
-  --main-bg-color: rgb(241, 224, 210);
+  --main-bg-color: rgb(247, 229, 214);
   --punch-bg-color: #D2D4C8;
   --extra-color:rgb(204, 50, 22);
+  --app-width:360px;
+  --app-height:600px;
 }
 *{
   box-sizing: 0;
@@ -14,10 +16,9 @@
 }
 
 .app {
-  margin-top:20px;
   text-align: center;
-  width:360px;
-  height:600px;
+  width:var(--app-width);
+  height:var(--app-height);
   border: solid 2px;
   display: flex;
   flex-direction: column;

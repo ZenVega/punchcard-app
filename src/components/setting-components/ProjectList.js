@@ -1,9 +1,11 @@
 import React from 'react';
+import './Setting.css'
+
 import {useSelector} from 'react-redux'
 
 const ProjectList = () => {
   return(
-  <div id="project-list" >
+  <div class="project-list" >
   
   </div>
   )

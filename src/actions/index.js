@@ -68,11 +68,10 @@ export const addNewProject = (id,obj) => {
   }
 }
 
-export const changeCurrentProject = (id,obj) => {
+export const changeCurrentProject = (id) => {
   return{
     type: 'CHANGE_CURRENT_PROJECT',
-    id: id,
-    payload: obj
+    id
   }
 }
 

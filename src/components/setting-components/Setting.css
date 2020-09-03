@@ -1,0 +1,55 @@
+/* GENERAL */
+
+.setting-input{
+  background-color: var(--main-bg-color);
+  border:unset;
+  border-bottom: solid  var(--text-color) ;
+
+}
+
+/* PROJECT LIST */
+.project-list{
+  
+}
+
+/* PROJECT ADDER */
+
+.project-adder{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top:0;
+  width:var(--app-width);
+  height:var(--app-height);
+  background-color: var(--main-bg-color);
+  text-align: left;
+}
+
+
+.exit-btn{
+  align-self: end;
+  font-weight: bold;
+  font-size: 30px;
+  margin:10px;
+  transform: rotate(45deg);
+}
+
+#project-name-input{
+  font-size: 20px;
+  width: 300px;
+  
+}
+
+#project-info-input{
+  border: solid  var(--text-color) ;
+  font-size: 16px;
+  width: 280px;
+  padding:10px;
+}
+
+.submit-btn{
+  font-size: 20px;
+  margin:10px;
+}

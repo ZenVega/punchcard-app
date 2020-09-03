@@ -1,7 +1,7 @@
-export const currentProject = (state = "Add a new project", action) => {
+export const currentProject = (state = '', action) => {
   switch(action.type){
     case 'CHANGE_CURRENT_PROJECT':
-        return state
+        return action.id
       default:
         return state
       }

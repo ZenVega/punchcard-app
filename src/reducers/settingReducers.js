@@ -1,4 +1,4 @@
-export const showProjectAdder = (state = false, action) => {
+export const showProjectAdder = (state = true, action) => {
   switch(action.type){
     case 'SHOW_PROJECT_ADDER':
         return state = action.payload;
