@@ -76,6 +76,14 @@ export const changeCurrentProject = (id) => {
 }
 
 
+export const updateProjectSearch = str => {
+  return{
+    type: 'UPDATE_PROJECT_SEARCH',
+    payload: str
+  }
+}
+
+
 export const addNewSession = (id, obj) => {
   return{
     type: 'ADD_NEW_SESSION',

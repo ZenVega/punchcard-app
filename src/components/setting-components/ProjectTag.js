@@ -11,9 +11,9 @@ const ProjectTag = (props) => {
   }
 
   return(
-  <div class="project-tag" >
+  <div className="project-tag" >
     <h3 
-      class="project-tag-name"
+      className="project-tag-name"
       onClick={clickHandler}
     >{props.name}</h3>
   </div>

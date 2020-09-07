@@ -2,12 +2,13 @@ import { combineReducers } from 'redux';
 
 import {showSessions, showTimer, showToday, setRiderBtn} from './riderReducers'
 import {startBtnStateActive, timeRunning} from './timerReducers'
-import {projects, currentProject, sessions} from './dataReducers'
+import {projects, currentProject, projectSearch, sessions} from './dataReducers'
 import {showProjectAdder, showProjectList} from './settingReducers'
 
 const data = combineReducers({
   currentProject,
   projects,
+  projectSearch,
   sessions
 })
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Setting.css'
 import {useSelector, useDispatch} from 'react-redux'
 import {showProjectAdder, addNewProject, changeCurrentProject} from './../../actions/index'
@@ -9,11 +9,14 @@ const ProjectAdder = () => {
   
   const dispatch = useDispatch();
   const projects = useSelector(state=> state.data.projects)
+  const projectSearch = useSelector(state => state.data.projectSearch)
   const [projectName, setProjectName] = useState('');
   const [additionalInfo, setAdditionalInfo] = useState('');
   const [nameError, setNameError] = useState('');
   
-
+  useEffect(()=>{
+    setProjectName(projectSearch);
+  }, [projectSearch])
 
   const generateNewProject = () => {
     let match = projects.projectIDs.find(id => projects[id].name === projectName);
@@ -66,6 +69,7 @@ const ProjectAdder = () => {
         id="project-name-input" 
         type="text"
         onChange={nameChangeHandler}
+        value={projectName}
         />
       <h5 id="name-error">{nameError}</h5>
     </div>

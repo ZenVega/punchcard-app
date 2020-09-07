@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux'
-import {showProjectList} from './../../actions/index'
+import {showProjectList, updateProjectSearch} from './../../actions/index'
 
 const CurrentProject = () => {
   const dispatch = useDispatch();
@@ -16,6 +16,7 @@ const CurrentProject = () => {
       id="current-project-input"
       placeholder={projectTitle}
       onClick={()=>dispatch(showProjectList(true))}
+      onChange={e=>dispatch(updateProjectSearch(e.target.value))}
     />
   </div>
   )

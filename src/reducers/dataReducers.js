@@ -36,6 +36,15 @@ switch(action.type){
     }
 }
 
+export const projectSearch = (state = '', action) => {
+switch(action.type){
+  case 'UPDATE_PROJECT_SEARCH':
+      return action.payload
+    default:
+      return state
+    }
+}
+
 
 const sessionsInitialState = {
   'asdsafshf543rzutruerwqerqwr':
