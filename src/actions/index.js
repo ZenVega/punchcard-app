@@ -75,3 +75,27 @@ export const changeCurrentProject = (id) => {
   }
 }
 
+
+export const addNewSession = (id, obj) => {
+  return{
+    type: 'ADD_NEW_SESSION',
+    id: id,
+    payload: obj
+  }
+}
+
+export const updateSession = (id, obj) => {
+  return{
+    type: 'UPDATE_SESSION',
+    id: id,
+    payload: obj
+  }
+}
+
+export const removeSession = (id) => {
+  return{
+    type: 'REMOVE_SESSION',
+    id: id
+  }
+}
+

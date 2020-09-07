@@ -35,3 +35,59 @@ switch(action.type){
       return state
     }
 }
+
+
+const sessionsInitialState = {
+  'asdsafshf543rzutruerwqerqwr':
+  {
+    project: 'asdsafshf5436357ghe',
+    start: '2020-09-07T08:42:50.624Z',
+    end: '2020-09-07T08:44:05.014Z'
+    
+  },
+  'sdgsgsgdsaas436357ghe':
+  {
+    project: 'asdsafshf5436357ghe',
+    start: '2020-09-07T08:48:50.624Z',
+    end: '2020-09-07T08:55:05.014Z'
+    
+  },
+  'asfgasgsag436hsdesdfsfsd':
+  {
+    project: '43635sdf7ghsdesdfsfsd',
+    start: '2020-09-07T09:10:50.624Z',
+    end: '2020-09-07T09:20:05.014Z'
+    
+  },
+  sessionIDs:['asdsafshf543rzutruerwqerqwr', 'sdgsgsgdsaas436357ghe', 'asfgasgsag436hsdesdfsfsd']
+}
+
+export const sessions = (state = sessionsInitialState, action) => {
+  switch(action.type){
+    case 'ADD_NEW_SESSION':
+      return {
+        ...state, 
+          [action.id] : action.payload,
+          sessionIDs: state.sessionIDs.concat(action.id)
+      }
+    case 'UPDATE_SESSION':
+      return {
+        ...state, 
+          [action.id] : {
+            ...state[action.id],
+            end: action.payload
+          }
+      }
+    case 'REMOVE_SESSION':
+      let sessionsUpdate = {...state.sessions}
+      delete sessionsUpdate[action.id]
+      sessionsUpdate.sessionIDs = state.sessions.sessionIDs.filter(id => id !== action.id)
+      return {
+        ...state,
+        sessions: sessionsUpdate
+      }
+      default:
+        return state
+  }
+}
+

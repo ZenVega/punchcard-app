@@ -1,10 +1,9 @@
 
 import React, {useState, useEffect} from 'react'
 import {useSelector , useDispatch} from 'react-redux'
-import {toggleStartBtn, updateRunningTime} from './../../actions/index'
+import {toggleStartBtn, updateRunningTime, addNewSession, updateSession} from './../../actions/index'
 const { v4: generateID } = require('uuid');
 
-const newID = generateID()
 
 const StartBtn = () => {
   const dispatch = useDispatch();
@@ -13,6 +12,7 @@ const StartBtn = () => {
 
   let buttonStateActivity = useSelector(state => state.timer.startBtnStateActive);
   let currentTime = useSelector(state => state.timer.timeRunning);
+  let currentProject = useSelector(state => state.data.currentProject);
  
   let buttonState = 'start-btn-inactive'
   if(buttonStateActivity){
@@ -28,11 +28,28 @@ const StartBtn = () => {
   let {hours} = currentTime;
   
   const [timerActive, setTimerActive] = useState(false);
+  const [currentSession, setCurrentSession] = useState('');
   
   const toggleTimer = () => {
     if(timerActive){
       setTimerActive(false);
+
+      const date = new Date().toISOString();
+      const id = currentSession
+      dispatch(updateSession(id, date))
+
     } else {
+
+      const id = generateID();
+      setCurrentSession(id);
+      const date = new Date().toISOString();
+      
+      dispatch(addNewSession(
+        id,{
+        project: currentProject,
+        start: date
+      }))
+
       setTimerActive(true);
       seconds = 0;
       minutes = 0;
