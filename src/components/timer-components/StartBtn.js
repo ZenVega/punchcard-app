@@ -2,8 +2,6 @@
 import React, {useState, useEffect} from 'react'
 import {useSelector , useDispatch} from 'react-redux'
 import {toggleStartBtn, updateRunningTime, addNewSession, updateSession, toggleNoProjectEntered} from './../../actions/index'
-import CurrentProject from './CurrentProject';
-const { v4: generateID } = require('uuid');
 
 
 const StartBtn = () => {
@@ -14,8 +12,7 @@ const StartBtn = () => {
   let buttonStateActivity = useSelector(state => state.timer.startBtnStateActive);
   let currentTime = useSelector(state => state.timer.timeRunning);
   let currentProject = useSelector(state => state.data.currentProject);
-  console.log(currentProject)
- 
+
   let buttonState = 'start-btn-inactive'
   if(buttonStateActivity){
     buttonState = 'start-btn-active'
@@ -68,12 +65,12 @@ const StartBtn = () => {
       dispatch(toggleStartBtn(false));
 
       const date = new Date().getTime();
-      const id = currentSession
-      dispatch(updateSession(id, date))
+      const id = currentSession;
+      const duration = date-id;
+      dispatch(updateSession(id, {end: date, duration: duration}))
 
     } else {
       if(currentProject === ''){
-        console.log('no current project')
         dispatch(toggleNoProjectEntered(true));
         setTimerActive(false);
         return
@@ -81,17 +78,17 @@ const StartBtn = () => {
       } else { 
         dispatch(toggleStartBtn(true));
         dispatch(toggleNoProjectEntered(false));
-        const date = new Date();
-        const id = date.getTime();
+        const newDate = new Date();
+        const id = newDate.getTime();
         const start = id;
-        const inWords = date.toISOString();
+        const date = newDate.toISOString().substring(0, 10);
         setCurrentSession(id);
         
         dispatch(addNewSession(
           id,{
             project: currentProject,
             start,
-            inWords
+            date
           }))
           
         setTimerActive(true);

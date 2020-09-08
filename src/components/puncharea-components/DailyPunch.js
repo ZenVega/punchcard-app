@@ -8,15 +8,15 @@ const DailyPunch = (props) => {
     let digit = Math.round(Math.random()*1)
     dailyOrder.push(digit)
   };
-  console.log(dailyOrder)
+
 
   return(
     <div className="daily-punch">
-      {dailyOrder.map(digit => {
+      {dailyOrder.map((digit, index) => {
         if(digit === 1){
-          return <PunchedHole status="punched-hole-active"/>
+          return <PunchedHole key={index} status="punched-hole-active"/>
         } else {
-          return <PunchedHole status="punched-hole"/>
+          return <PunchedHole key={index} status="punched-hole"/>
         }
       })}
     </div>

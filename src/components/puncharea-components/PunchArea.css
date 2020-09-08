@@ -1,20 +1,46 @@
 .punch-area {
   border-top: dashed var(--extra-color);
+  width: var(--app-width);
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+#punch-area-header{
+  display: flex;
+  flex-direction: column;
+  z-index:1;
+  left:40px;
 }
 .punch-area h1{
   color: var(--extra-color);
   font-size: 80px;
   line-height: 1;
+  opacity: 0.5;
 }
 
-.daily-punch{
-  position:absolute;
-  top:445px;
+.punch-card-wrapper{
+  position: relative;
+  top:-156px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.active-punch-card{
   height:156px;
-  width:var(--app-width);
+  min-width:var(--app-width-x2);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  z-index:2;
+}
+
+.daily-punch{
+  height:156px;
+  min-width:var(--app-width-x2);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  z-index:2;
 }
 
 .punched-hole-active{

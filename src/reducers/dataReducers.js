@@ -89,7 +89,8 @@ export const sessions = (state = sessionsInitialState, action) => {
         ...state, 
           [action.id] : {
             ...state[action.id],
-            end: action.payload
+            end: action.payload.end,
+            duration: action.payload.duration
           }
       }
     case 'REMOVE_SESSION':

@@ -1,12 +1,12 @@
 import React from 'react';
 import './PunchArea.css'
-import DailyPunch from './DailyPunch'
+import PunchCardWrapper from './PunchCardWrapper'
 
 const PunchArea = (props) => {
   return(
     <div className="punch-area">
-      <h1>PUNCH CARD</h1>
-      <DailyPunch/>
+      <span id="punch-area-header"><h1>PUNCH </h1><h1> CARD</h1></span>
+      <PunchCardWrapper/>
     </div>
   )
 }

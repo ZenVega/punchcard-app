@@ -15,7 +15,7 @@ const ProjectSwitch = () => {
         id="change-project-btn" 
         className="project-switch-btn"
         onClick={()=>dispatch(showProjectList(true))}
-        >↔️</div>
+        ><span role="img" aria-label="Project-Switch">↔️</span></div>
       <div 
         id="add-project-btn" 
         className="project-switch-btn"

@@ -12,6 +12,9 @@
   display: flex;
   justify-content: space-evenly;
 }
+#change-project-btn span{
+  color:var(--main-bg-color);
+}
 
 #current-project{
   margin-left:64px;

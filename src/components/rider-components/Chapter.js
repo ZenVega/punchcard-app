@@ -8,7 +8,7 @@ const Chapter = (props) => {
 
   const switchChapter = (id) => {
 
-    if(id == 1){
+    if(id === "1"){
       dispatch(showSessions(true))
       dispatch(showTimer(false))
       dispatch(showToday(false))
@@ -17,7 +17,7 @@ const Chapter = (props) => {
         timer: 'rider-btn',
         today: 'rider-btn'
       }))
-    } else if(id == 2){
+    } else if(id === "2"){
       dispatch(showTimer(true))
       dispatch(showSessions(false))
       dispatch(showToday(false))
@@ -26,7 +26,7 @@ const Chapter = (props) => {
         timer: 'rider-btn active',
         today: 'rider-btn'
       }))
-    } else if(id == 3){
+    } else if(id === "3"){
       dispatch(showToday(true))
       dispatch(showSessions(false))
       dispatch(showTimer(false))

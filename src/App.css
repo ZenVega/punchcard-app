@@ -7,6 +7,7 @@
   --punch-bg-color: #D2D4C8;
   --extra-color:rgb(204, 50, 22);
   --app-width:360px;
+  --app-width-x2: 720px;
   --app-height:600px;
 }
 *{
