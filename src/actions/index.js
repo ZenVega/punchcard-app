@@ -60,6 +60,13 @@ export const updateRunningTime = obj => {
   }
 }
 
+export const toggleNoProjectEntered = obj => {
+  return{
+    type: 'TOGGLE_NO_PROJECT_ENTERED',
+    payload: obj
+  }
+}
+
 export const addNewProject = (id,obj) => {
   return{
     type: 'ADD_NEW_PROJECT',

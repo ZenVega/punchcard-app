@@ -16,7 +16,6 @@
 #current-project{
   margin-left:64px;
   width:200px;
-  border-bottom: solid var(--text-color);
 }
 
 #current-project-input{
@@ -24,6 +23,12 @@
   border: unset;
   font-size: 20px;
   color:var(--text-color);
+  border-bottom: solid var(--text-color);
+  width:200px;
+}
+#current-project-input-error{
+  text-align: start;
+  color: var(--extra-color);
 }
 
 #current-project-input::placeholder {

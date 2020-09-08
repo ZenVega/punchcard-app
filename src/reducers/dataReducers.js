@@ -66,9 +66,14 @@ const sessionsInitialState = {
     project: '43635sdf7ghsdesdfsfsd',
     start: '2020-09-07T09:10:50.624Z',
     end: '2020-09-07T09:20:05.014Z'
-    
   },
-  sessionIDs:['asdsafshf543rzutruerwqerqwr', 'sdgsgsgdsaas436357ghe', 'asfgasgsag436hsdesdfsfsd']
+  'rtdjrtjdjzasfgasgsag436hsdesdfsfsd':
+  {
+    project: "43635sdf7ghsdesdfsfsd",
+    start: "2020-09-07T11:24:02.315Z",
+    end: "2020-09-07T11:24:07.397Z"
+  },
+  sessionIDs:['asdsafshf543rzutruerwqerqwr', 'sdgsgsgdsaas436357ghe', 'asfgasgsag436hsdesdfsfsd','rtdjrtjdjzasfgasgsag436hsdesdfsfsd']
 }
 
 export const sessions = (state = sessionsInitialState, action) => {

@@ -6,6 +6,7 @@ const CurrentProject = () => {
   const dispatch = useDispatch();
   const currentProjectID = useSelector(state=> state.data.currentProject);
   const projects = useSelector(state=> state.data.projects);
+  const noProjectEnteredError = useSelector(state=> state.timer.noProjectEnteredError);
 
   const projectTitle = currentProjectID? projects[currentProjectID].name : 'add new project';
 
@@ -18,6 +19,7 @@ const CurrentProject = () => {
       onClick={()=>dispatch(showProjectList(true))}
       onChange={e=>dispatch(updateProjectSearch(e.target.value))}
     />
+    {noProjectEnteredError && !currentProjectID && <h6 id="current-project-input-error">What Project are u working on</h6>}
   </div>
   )
   

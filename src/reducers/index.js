@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import {showSessions, showTimer, showToday, setRiderBtn} from './riderReducers'
-import {startBtnStateActive, timeRunning} from './timerReducers'
+import {startBtnStateActive, timeRunning, noProjectEnteredError} from './timerReducers'
 import {projects, currentProject, projectSearch, sessions} from './dataReducers'
 import {showProjectAdder, showProjectList} from './settingReducers'
 
@@ -26,7 +26,8 @@ const rider = combineReducers({
 
 const timer = combineReducers({
   startBtnStateActive,
-  timeRunning
+  timeRunning,
+  noProjectEnteredError
 })
 
 
