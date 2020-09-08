@@ -3,4 +3,30 @@
 }
 .punch-area h1{
   color: var(--extra-color);
+  font-size: 80px;
+  line-height: 1;
+}
+
+.daily-punch{
+  position:absolute;
+  top:445px;
+  height:156px;
+  width:var(--app-width);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.punched-hole-active{
+  width:20px;
+  height:7px;
+  margin:3px 4px;
+  background-color: var(--text-color);
+}
+
+.punched-hole{
+  width:20px;
+  height:7px;
+  margin:3px 4px;
+
 }

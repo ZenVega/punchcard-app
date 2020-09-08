@@ -34,12 +34,12 @@
 }
 
 .main-area{
-  height:68%;
+  height:66%;
   background-color: var(--main-bg-color);
 }
 
 .punch-area{
-  height:25%;
+  height:27%;
   background-color: var(--main-bg-color);
   color: var(--text-color-light);
 }
