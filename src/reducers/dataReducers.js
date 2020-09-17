@@ -99,7 +99,23 @@ const sessionsInitialState = {
     end: 1600338524341,
     duration: 8088
   },
-  sessionIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253']
+  '1600339898999':
+  {
+    project: "sshasdadaf5436357ghe",
+    start: 1600339898999,
+    date: "2020-09-17",
+    end: 1600339902564,
+    duration: 3565
+  },
+  '1600341203358':
+  {
+    project: "asdsafshf5436357ghe",
+    start: 1600341203358,
+    date: "2020-09-17",
+    end: 1600341216327,
+    duration: 12969
+  },
+  sessionIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600339898999', '1600341203358']
 }
 
 export const sessions = (state = sessionsInitialState, action) => {
@@ -132,3 +148,33 @@ export const sessions = (state = sessionsInitialState, action) => {
   }
 }
 
+const dailyCardsInitialState = {
+  '20200917':
+  {
+    date: "Thu Sep 17 2020",
+    end: 1600379999999,
+    sessionsthatDay:[ "1600334008461", "1600334209606", "1600335210849" ],
+    start: 1600293600000
+  },
+  '20200916':
+  {
+    date: "Wed Sep 16 2020",
+    end: 1600293599999,
+    sessionsthatDay:[],
+    start: 1600207200000
+  },
+  cardIDs:['20200916','20200917']
+}
+
+export const dailyCards = (state = dailyCardsInitialState, action) => {
+switch(action.type){
+  case 'ADD_DAILY_CARD':
+      return {
+        ...state, 
+          [action.id] : action.payload,
+          cardIDs: state.cardIDs.concat(action.id)
+      }
+    default:
+      return state
+    }
+}

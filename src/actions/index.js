@@ -114,3 +114,11 @@ export const removeSession = (id) => {
   }
 }
 
+export const addDailyCard = (id, obj) => {
+  return{
+    type: 'ADD_DAILY_CARD',
+    id,
+    payload: obj
+  }
+}
+

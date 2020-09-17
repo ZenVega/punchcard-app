@@ -2,7 +2,8 @@ import React from 'react';
 import './PunchArea.css'
 import PunchedHole from './PunchedHole';
 
-const DailyCards = (props) => {
+const DailyCard = (props) => {
+  console.log('one day')
   let dailyOrder = []; 
   for(let i=0; i < 288 ; i++){
     let digit = Math.round(Math.random()*1)
@@ -23,4 +24,4 @@ const DailyCards = (props) => {
   )
 }
 
-export default DailyCards;
+export default DailyCard;
