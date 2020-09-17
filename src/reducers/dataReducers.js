@@ -149,21 +149,21 @@ export const sessions = (state = sessionsInitialState, action) => {
 }
 
 const dailyCardsInitialState = {
-  '20200917':
+  '20200914':
   {
-    date: "Thu Sep 17 2020",
+    start: 1600293600000,
     end: 1600379999999,
+    date: "Thu Sep 17 2020",
     sessionsthatDay:[ "1600334008461", "1600334209606", "1600335210849" ],
-    start: 1600293600000
   },
-  '20200916':
+  '20200913':
   {
-    date: "Wed Sep 16 2020",
+    start: 1600207200000,
     end: 1600293599999,
+    date: "Wed Sep 16 2020",
     sessionsthatDay:[],
-    start: 1600207200000
   },
-  cardIDs:['20200916','20200917']
+  cardIDs:['20200914','20200913']
 }
 
 export const dailyCards = (state = dailyCardsInitialState, action) => {
@@ -172,7 +172,7 @@ switch(action.type){
       return {
         ...state, 
           [action.id] : action.payload,
-          cardIDs: state.cardIDs.concat(action.id)
+          cardIDs: action.id.concat(state.cardIDs)
       }
     default:
       return state
