@@ -12,15 +12,19 @@ const projectsInitialState = {
   {
     name: 'nice Website'
   },
+  'sshasdadaf5436357ghe':
+  {
+    name: 'a fun App'
+  },
   'dsaasfdshfdfg5df436357ghe':
   {
-    name: 'shitty App'
+    name: 'household'
   },
   '43635sdf7ghsdesdfsfsd':
   {
     name: 'Aeroplane'
   },
-  projectIDs:['asdsafshf5436357ghe', 'dsaasfdshfdfg5df436357ghe', '43635sdf7ghsdesdfsfsd']
+  projectIDs:['asdsafshf5436357ghe', 'dsaasfdshfdfg5df436357ghe', '43635sdf7ghsdesdfsfsd', 'sshasdadaf5436357ghe']
 }
 
 export const projects = (state = projectsInitialState, action) => {
@@ -47,33 +51,55 @@ switch(action.type){
 
 
 const sessionsInitialState = {
-  'asdsafshf543rzutruerwqerqwr':
+  '1600334008461':
   {
-    project: 'asdsafshf5436357ghe',
-    start: '2020-09-07T08:42:50.624Z',
-    end: '2020-09-07T08:44:05.014Z'
-    
+    project: "asdsafshf5436357ghe",
+    start: 1600334008461,
+    date: "2020-09-17",
+    end: 1600334011206,
+    duration: 2745
   },
-  'sdgsgsgdsaas436357ghe':
+  '1600334209606':
   {
-    project: 'asdsafshf5436357ghe',
-    start: '2020-09-07T08:48:50.624Z',
-    end: '2020-09-07T08:55:05.014Z'
-    
+    project: "asdsafshf5436357ghe",
+    start: 1600334209606,
+    date: "2020-09-17",
+    end: 1600334215014,
+    duration: 5408
   },
-  'asfgasgsag436hsdesdfsfsd':
+  '1600335210849':
   {
-    project: '43635sdf7ghsdesdfsfsd',
-    start: '2020-09-07T09:10:50.624Z',
-    end: '2020-09-07T09:20:05.014Z'
+    project: "dsaasfdshfdfg5df436357ghe",
+    start: 1600335210849,
+    date: "2020-09-17",
+    end: 1600335216485,
+    duration: 5636
   },
-  'rtdjrtjdjzasfgasgsag436hsdesdfsfsd':
+  '1600335626162':
   {
     project: "43635sdf7ghsdesdfsfsd",
-    start: "2020-09-07T11:24:02.315Z",
-    end: "2020-09-07T11:24:07.397Z"
+    start: 1600335626162,
+    date: "2020-09-17",
+    end: 1600335635792,
+    duration: 9630
   },
-  sessionIDs:['asdsafshf543rzutruerwqerqwr', 'sdgsgsgdsaas436357ghe', 'asfgasgsag436hsdesdfsfsd','rtdjrtjdjzasfgasgsag436hsdesdfsfsd']
+  '1600337504577':
+  {
+    project: "dsaasfdshfdfg5df436357ghe",
+    start: 1600337504577,
+    date: "2020-09-17",
+    end: 1600337511945,
+    duration: 7368
+  },
+  '1600338516253':
+  {
+    project: "sshasdadaf5436357ghe",
+    start: 1600338516253,
+    date: "2020-09-17",
+    end: 1600338524341,
+    duration: 8088
+  },
+  sessionIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253']
 }
 
 export const sessions = (state = sessionsInitialState, action) => {
