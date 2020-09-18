@@ -11,12 +11,10 @@ const PunchArea = (props) => {
   const dispatch = useDispatch();
   const sessionIDs = useSelector(state => state.data.sessions.sessionIDs).reverse();
   const cardIDs = useSelector(state => state.data.dailyCards.cardIDs);
-
-/*   const [dateToday, setDateToday] = useState(''); */
+  
 
   useEffect(() => {
     const getDate = new Date();
-/*     setDateToday(createDateString(getDate)); */
     
     const jesterdayUTC = new Date(new Date()-durationDay);
     const jesterdayString = createDateString(jesterdayUTC);
