@@ -11,7 +11,6 @@ const PunchArea = (props) => {
   const dispatch = useDispatch();
   const sessionIDs = useSelector(state => state.data.sessions.sessionIDs).reverse();
   const cardIDs = useSelector(state => state.data.dailyCards.cardIDs);
-  const cards = useSelector(state => state.data.dailyCards);
 
 /*   const [dateToday, setDateToday] = useState(''); */
 
@@ -31,7 +30,7 @@ const PunchArea = (props) => {
     
     return () => {
     }
-  },[cards])
+  },[cardIDs])
   
 
   const createDailyCards = (days, until) => {

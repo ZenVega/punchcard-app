@@ -22,10 +22,11 @@ const PunchCardWrapper = () => {
   
   const loadDailyCards = () => {
     let cardsToLoad = [];
+    const maximum = cardIDs.length;
     const lastDayLoaded = cardsLoaded.length === 0?undefined:cardsLoaded[cardsLoaded.length-1];
     
     if(!lastDayLoaded){
-      for(let i = 0; i < 2; i++){
+      for(let i = 0; i < maximum; i++){
         cardsToLoad.push(cardIDs[i])
       }
       setCardsLoaded(cardsToLoad)
@@ -39,7 +40,6 @@ const PunchCardWrapper = () => {
         }
       }
     }
-    console.log(cardsLoaded)
   }
 
   const checkForChanges = () => {
@@ -53,7 +53,8 @@ const PunchCardWrapper = () => {
     <div className="punch-card-wrapper">
       {cardsLoaded && cardsLoaded.map( (card, index) => (
       <DailyCard
-        key ={index}/>
+        key = {index}
+        data = {card}/>
       ))}
       <ActivePunchCard/>
     </div>
