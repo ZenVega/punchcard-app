@@ -23,14 +23,16 @@ const PunchCardWrapper = () => {
     const jesterdayUTC = new Date(new Date()-durationDay);
     const jesterdayString = createDateString(jesterdayUTC);
     const firstDayInCardsArray = cardIDs[0];
-
+    
     if(firstDayInCardsArray < jesterdayString){
       const timeAt0 = new Date(getDate).getTime() - durationDay;
       const numberofDays = jesterdayString-firstDayInCardsArray;
       createDailyCards(numberofDays, timeAt0);
     }
-
+    
+    loadDailyCards();
     return () => {
+
 
     }
   },[cardIDs])
@@ -46,7 +48,7 @@ const PunchCardWrapper = () => {
         const id = createDateString(date);
 
         const sessionsThatDay = sessionIDs.filter(id => id < end && id >= start);
-        if(sessionsThatDay.length == 0){
+        if(sessionsThatDay.length === 0){
           continue;
         }
         
@@ -64,14 +66,33 @@ const PunchCardWrapper = () => {
     return [date.getFullYear().toString() + month + day]; 
   }
 
-  const loadDailyCards = (firstDayUnloaded, numOfDays) => {
-    
+  const loadDailyCards = () => {
+    console.log(cardIDs)
+    console.log(cardsLoaded)
+    let cardsToLoad = [];
+    const lastDayLoaded = cardsLoaded.length === 0?undefined:cardsLoaded[cardsLoaded.length-1];
+    if(!lastDayLoaded){
+      console.log('undefined')
+      for(let i = 0; i < 2; i++){
+        cardsToLoad.push(cardIDs[i])
+      }
+      console.log(cardsToLoad)
+      setCardsLoaded(cardsToLoad)
+    } else {
+      const index = cardIDs.findIndex(id => id === lastDayLoaded)+1;
+      for(let i = index; i < index+5; i++){
+        cardsToLoad.push(cardIDs[i])
+      }
+      setCardsLoaded([...cardsLoaded,cardsToLoad])
+    }
+    console.log(cardsLoaded)
   }
 
   return(
     <div className="punch-card-wrapper">
-      {cardsLoaded.map( day => (
-      <DailyCard/>
+      {cardsLoaded.map( (card, index) => (
+      <DailyCard
+        key ={index}/>
       ))}
       <ActivePunchCard/>
     </div>

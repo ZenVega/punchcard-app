@@ -3,7 +3,6 @@ import './PunchArea.css'
 import PunchedHole from './PunchedHole';
 
 const DailyCard = (props) => {
-  console.log('one day')
   let dailyOrder = []; 
   for(let i=0; i < 288 ; i++){
     let digit = Math.round(Math.random()*1)
