@@ -34,6 +34,9 @@
   z-index:2;
 }
 
+.daily-card{
+  text-align: left;
+}
 .daily-punch{
   height:156px;
   min-width:var(--app-width-x2);
@@ -41,6 +44,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   z-index:2;
+/*   position: relative;
+  left: -30%; */
 }
 
 .punched-hole-active{
@@ -54,5 +59,10 @@
   width:20px;
   height:7px;
   margin:3px 4px;
+}
 
+.date-tag{
+  margin: -5px 0 -5px 5px;
+  width: 50%;
+  color: var(--extra-color);
 }

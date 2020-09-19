@@ -115,7 +115,15 @@ const sessionsInitialState = {
     end: 1600436914813,
     duration: 3281
   },
-  sessionIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532']
+  '1600524017985':
+  {
+    project: "43635sdf7ghsdesdfsfsd",
+    start: 1600524017985,
+    date: "2020-09-19",
+    end: 1600524022239,
+    duration: 4254
+  },
+  sessionIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532', '1600524017985']
 }
 
 
@@ -151,21 +159,21 @@ export const sessions = (state = sessionsInitialState, action) => {
 }
 
 const dailyCardsInitialState = {
-  '20200914':
+  '20200917':
   {
     start: 1600293600000,
     end: 1600379999999,
     date: "Thu Sep 17 2020",
-    sessionsthatDay:[ "1600334008461", "1600334209606", "1600335210849" ],
+    sessionsThatDay:[ "1600334008461", "1600334209606", "1600335210849" ],
   },
-  '20200913':
+  '20200916':
   {
     start: 1600207200000,
     end: 1600293599999,
     date: "Wed Sep 16 2020",
-    sessionsthatDay:[],
+    sessionsThatDay:[],
   },
-  cardIDs:['20200914','20200913']
+  cardIDs:['20200917','20200916']
 }
 
 export const dailyCards = (state = dailyCardsInitialState, action) => {

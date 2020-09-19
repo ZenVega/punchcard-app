@@ -54,7 +54,7 @@ const PunchCardWrapper = () => {
       {cardsLoaded && cardsLoaded.map( (card, index) => (
       <DailyCard
         key = {index}
-        data = {card}/>
+        id = {card}/>
       ))}
       <ActivePunchCard/>
     </div>
