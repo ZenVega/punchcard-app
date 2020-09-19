@@ -64,9 +64,14 @@ const StartBtn = () => {
       setTimerActive(false);
       dispatch(toggleStartBtn(false));
 
-      const date = new Date().getTime();
+      const stopTime = new Date()
+      const date = stopTime.getTime();
       const id = currentSession;
       const duration = date-id;
+
+      if(new Date(stopTime).getDay() !== new Date(stopTime).getDay()){
+        //create new session from 0:0:0
+      }
       dispatch(updateSession(id, {end: date, duration: duration}))
 
     } else {
