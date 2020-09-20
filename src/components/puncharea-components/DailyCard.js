@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import './PunchArea.css'
 import PunchedHole from './PunchedHole';
@@ -8,6 +8,7 @@ const DailyCard = (props) => {
   const card = useSelector(state => state.data.dailyCards[props.id]);
   const allSessions = useSelector(state => state.data.sessions);
   let dailySequence = [];
+
   
   const generatePunchArray = () => {
     //generate fragments for that day
@@ -34,8 +35,9 @@ const DailyCard = (props) => {
     })
   }
 
+  generatePunchArray()
 
-generatePunchArray()
+
   return(
     <div className="daily-card">
       <h3 className="date-tag">{card.date}</h3>

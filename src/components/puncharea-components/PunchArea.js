@@ -4,7 +4,7 @@ import './PunchArea.css'
 import { addDailyCard } from '../../actions';
 import PunchCardWrapper from './PunchCardWrapper'
 
-const PunchArea = (props) => {
+const PunchArea = () => {
 
   const durationDay = 86400000;
 
@@ -21,9 +21,14 @@ const PunchArea = (props) => {
     const firstDayInCardsArray = cardIDs[0];
     
     if(firstDayInCardsArray < jesterdayString){
-      const timeAt0 = new Date(getDate).getTime() - durationDay;
+
+      const isoAt0p1 = getDate.toISOString().slice(0,11);
+      const isoAt0p2 = getDate.toISOString().slice(23);
+      const timeAt0String = `${isoAt0p1}00:00:00.000${isoAt0p2}`;
+      const timeAt0 = new Date(timeAt0String).getTime()-1;
+
       const numberofDays = jesterdayString-firstDayInCardsArray;
-      createDailyCards(numberofDays, timeAt0);
+      createDailyCards(numberofDays, timeAt0-durationDay);
     }
     
     return () => {

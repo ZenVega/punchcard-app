@@ -22,7 +22,9 @@
   position: relative;
   top:-156px;
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: nowrap;
+  overflow-x: scroll;
 }
 
 .active-punch-card{
@@ -35,7 +37,7 @@
 }
 
 .daily-card{
-  text-align: left;
+  text-align: right;
 }
 .daily-punch{
   height:156px;
@@ -63,6 +65,6 @@
 
 .date-tag{
   margin: -5px 0 -5px 5px;
-  width: 50%;
+  width: 100%;
   color: var(--extra-color);
 }

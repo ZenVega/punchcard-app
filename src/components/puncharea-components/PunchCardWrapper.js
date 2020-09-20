@@ -51,12 +51,12 @@ const PunchCardWrapper = () => {
 
   return(
     <div className="punch-card-wrapper">
+      <ActivePunchCard/>
       {cardsLoaded && cardsLoaded.map( (card, index) => (
       <DailyCard
         key = {index}
         id = {card}/>
       ))}
-      <ActivePunchCard/>
     </div>
   )
 }
