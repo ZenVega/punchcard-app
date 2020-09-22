@@ -38,6 +38,7 @@
 
 .daily-card{
   text-align: right;
+  border-right:dashed var(--extra-color) 4px;
 }
 .daily-punch{
   height:156px;
@@ -64,7 +65,10 @@
 }
 
 .date-tag{
-  margin: -5px 0 -5px 5px;
+  margin: -5px 10px -5px -10px;
   width: 100%;
   color: var(--extra-color);
+}
+.active-punch-card{
+  text-align: right;
 }

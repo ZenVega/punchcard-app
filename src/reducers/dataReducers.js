@@ -8,7 +8,8 @@ export const currentProject = (state = '', action) => {
   }
 
 const projectsInitialState = {
-  'asdsafshf5436357ghe':
+  byID: {
+    'asdsafshf5436357ghe':
   {
     name: 'nice Website'
   },
@@ -23,8 +24,9 @@ const projectsInitialState = {
   '43635sdf7ghsdesdfsfsd':
   {
     name: 'Aeroplane'
+  }
   },
-  projectIDs:['asdsafshf5436357ghe', 'dsaasfdshfdfg5df436357ghe', '43635sdf7ghsdesdfsfsd', 'sshasdadaf5436357ghe']
+  allIDs:['asdsafshf5436357ghe', 'dsaasfdshfdfg5df436357ghe', '43635sdf7ghsdesdfsfsd', 'sshasdadaf5436357ghe']
 }
 
 export const projects = (state = projectsInitialState, action) => {
@@ -32,8 +34,11 @@ switch(action.type){
   case 'ADD_NEW_PROJECT':
       return {
         ...state, 
+        byID: {
+          ...state.byID,
           [action.id] : action.payload,
-          projectIDs: state.projectIDs.concat(action.id)
+          projectIDs: state.allIDs.concat(action.id)
+        }
       }
     default:
       return state
@@ -51,7 +56,8 @@ switch(action.type){
 
 
 const sessionsInitialState = {
-  '1600334008461':
+  byID:{
+    '1600334008461':
   {
     project: "asdsafshf5436357ghe",
     start: 1600334008461,
@@ -131,7 +137,8 @@ const sessionsInitialState = {
     end: 1600533505889,
     duration: 613835
   },
-  sessionIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532', '1600524017985', '1600532892054']
+  },
+  allIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532', '1600524017985', '1600532892054']
 }
 
 
@@ -141,22 +148,30 @@ export const sessions = (state = sessionsInitialState, action) => {
     case 'ADD_NEW_SESSION':
       return {
         ...state, 
+        byID:{ 
+          ...state.byID,
           [action.id] : action.payload,
-          sessionIDs: state.sessionIDs.concat(action.id)
+          allIDs: state.allIDs.concat(action.id)
+        }
       }
+      
     case 'UPDATE_SESSION':
       return {
         ...state, 
+        byID:{ 
+          ...state.byID, 
           [action.id] : {
             ...state[action.id],
             end: action.payload.end,
             duration: action.payload.duration
           }
+        }
       }
+
     case 'REMOVE_SESSION':
       let sessionsUpdate = {...state.sessions}
       delete sessionsUpdate[action.id]
-      sessionsUpdate.sessionIDs = state.sessions.sessionIDs.filter(id => id !== action.id)
+      sessionsUpdate.allIDs = state.sessions.allIDs.filter(id => id !== action.id)
       return {
         ...state,
         sessions: sessionsUpdate

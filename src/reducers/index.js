@@ -5,7 +5,7 @@ import {startBtnStateActive, timeRunning, noProjectEnteredError} from './timerRe
 import {projects, currentProject, projectSearch, sessions, dailyCards} from './dataReducers'
 import {showProjectAdder, showProjectList} from './settingReducers'
 
-const data = combineReducers({
+const entities = combineReducers({
   currentProject,
   projects,
   projectSearch,
@@ -33,7 +33,7 @@ const timer = combineReducers({
 
 
 const allReducers = combineReducers({
-  data,
+  entities,
   settings,
   rider,
   timer

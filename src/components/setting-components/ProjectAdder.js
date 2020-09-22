@@ -8,8 +8,8 @@ const { v4: generateID } = require('uuid');
 const ProjectAdder = () => {
   
   const dispatch = useDispatch();
-  const projects = useSelector(state=> state.data.projects)
-  const projectSearch = useSelector(state => state.data.projectSearch)
+  const projects = useSelector(state=> state.entities.projects)
+  const projectSearch = useSelector(state => state.entities.projectSearch)
   const [projectName, setProjectName] = useState('');
   const [additionalInfo, setAdditionalInfo] = useState('');
   const [nameError, setNameError] = useState('');
@@ -19,7 +19,7 @@ const ProjectAdder = () => {
   }, [projectSearch])
 
   const generateNewProject = () => {
-    let match = projects.projectIDs.find(id => projects[id].name === projectName);
+    let match = projects.allIDs.find(id => projects.byID[id].name === projectName);
 
     if(match){
       setNameError("A project with this name already Exists");

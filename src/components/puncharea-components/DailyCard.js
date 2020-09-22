@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import './PunchArea.css'
 import PunchedHole from './PunchedHole';
 
 const DailyCard = (props) => {
 
-  const card = useSelector(state => state.data.dailyCards[props.id]);
-  const allSessions = useSelector(state => state.data.sessions);
+  const card = useSelector(state => state.entities.dailyCards[props.id]);
+  const allSessions = useSelector(state => state.entities.sessions.byID);
   let dailySequence = [];
 
   
@@ -28,7 +28,7 @@ const DailyCard = (props) => {
     })
     
     indexesOfDailySequence.map((indexofDS, index) => {
-      for(let i=0; i<=fragmentsPerSession[index]; i++){
+      for(let i=0; i <= fragmentsPerSession[index]; i++){
         dailySequence.splice(indexofDS, 0,0)
       }
       dailySequence.splice(-fragmentsPerSession,fragmentsPerSession)

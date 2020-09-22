@@ -11,7 +11,7 @@ const StartBtn = () => {
 
   let buttonStateActivity = useSelector(state => state.timer.startBtnStateActive);
   let currentTime = useSelector(state => state.timer.timeRunning);
-  let currentProject = useSelector(state => state.data.currentProject);
+  let currentProject = useSelector(state => state.entities.currentProject);
 
   let buttonState = 'start-btn-inactive'
   if(buttonStateActivity){
@@ -69,7 +69,7 @@ const StartBtn = () => {
       const id = currentSession;
       const duration = date-id;
 
-      if(new Date(stopTime).getDay() === new Date(stopTime).getDay()){
+      if(new Date(currentSession).getDay() === new Date(stopTime).getDay()){
         const newTime = new Date(stopTime).toISOString().substring(0, 10);
         const beginningOfDay = new Date(newTime)
         console.log(beginningOfDay)
@@ -77,6 +77,7 @@ const StartBtn = () => {
       dispatch(updateSession(id, {end: date, duration: duration}))
 
     } else {
+
       if(currentProject === ''){
         dispatch(toggleNoProjectEntered(true));
         setTimerActive(false);

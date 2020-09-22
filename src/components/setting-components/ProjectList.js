@@ -7,9 +7,9 @@ import {showProjectList} from './../../actions/index'
 const ProjectList = () => {
   let listRef = useRef(null);
   const dispatch = useDispatch();
-  const projectIDs = useSelector(state => state.data.projects.projectIDs);
-  const projects = useSelector(state => state.data.projects);
-  const projectSearch = useSelector(state => state.data.projectSearch);
+  const projectIDs = useSelector(state => state.entities.projects.allIDs);
+  const projects = useSelector(state => state.entities.projects.byID);
+  const projectSearch = useSelector(state => state.entities.projectSearch);
 
   const projectsFiltered = projectIDs.filter(id => projects[id].name.includes(projectSearch));
 

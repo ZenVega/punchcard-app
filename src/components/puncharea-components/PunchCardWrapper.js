@@ -6,7 +6,7 @@ import ActivePunchCard from './ActivePunchCard'
 
 const PunchCardWrapper = () => {
   
-  const cardIDs = useSelector(state => state.data.dailyCards.cardIDs);
+  const cardIDs = useSelector(state => state.entities.dailyCards.cardIDs);
   const [cardsLoaded, setCardsLoaded] = useState([]);
   const [formerCardIDs, setFormerCardIDs] = useState([]);
   

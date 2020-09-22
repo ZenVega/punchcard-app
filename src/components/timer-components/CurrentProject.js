@@ -4,9 +4,9 @@ import {showProjectList, updateProjectSearch} from './../../actions/index'
 
 const CurrentProject = () => {
   const dispatch = useDispatch();
-  const currentProjectID = useSelector(state=> state.data.currentProject);
-  const projects = useSelector(state=> state.data.projects);
-  const noProjectEnteredError = useSelector(state=> state.timer.noProjectEnteredError);
+  const currentProjectID = useSelector(state=> state.entities.currentProject);
+  const projects = useSelector(state => state.entities.projects.byID);
+  const noProjectEnteredError = useSelector(state => state.timer.noProjectEnteredError);
 
   const projectTitle = currentProjectID? projects[currentProjectID].name : 'add new project';
 

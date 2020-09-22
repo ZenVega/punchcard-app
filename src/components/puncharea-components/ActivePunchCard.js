@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './PunchArea.css'
 import PunchedHole from './PunchedHole';
 
@@ -13,13 +13,7 @@ const ActivePunchCard = (props) => {
   return(
     <div className="active-punch-card">
       <h3 className="date-tag">Today is {dateToday}</h3>
-      {dailyOrder.map((digit, index) => {
-              if(digit === 1){
-                return <PunchedHole key={index} status="punched-hole-active"/>
-              } else {
-                return <PunchedHole key={index} status="punched-hole"/>
-              }
-            })}
+
     </div>
   )
 }
