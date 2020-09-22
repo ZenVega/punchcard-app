@@ -1,7 +1,8 @@
 
 import React, {useState, useEffect} from 'react'
 import {useSelector , useDispatch} from 'react-redux'
-import {toggleStartBtn, updateRunningTime, addNewSession, updateSession, toggleNoProjectEntered} from './../../actions/index'
+import {toggleStartBtn, updateRunningTime, addNewSession, updateSession, toggleNoProjectEntered} from './../../actions/index';
+import { v4 as generateID } from 'uuid';
 
 
 const StartBtn = () => {
@@ -9,9 +10,10 @@ const StartBtn = () => {
 
   //CHANGE BUTTON STATE
 
-  let buttonStateActivity = useSelector(state => state.timer.startBtnStateActive);
-  let currentTime = useSelector(state => state.timer.timeRunning);
-  let currentProject = useSelector(state => state.entities.currentProject);
+  const buttonStateActivity = useSelector(state => state.timer.startBtnStateActive);
+  const currentTime = useSelector(state => state.timer.timeRunning);
+  const currentProject = useSelector(state => state.entities.currentProject);
+  const sessions = useSelector(state => state.entities.sessions.byID)
 
   let buttonState = 'start-btn-inactive'
   if(buttonStateActivity){
@@ -67,12 +69,10 @@ const StartBtn = () => {
       const stopTime = new Date()
       const date = stopTime.getTime();
       const id = currentSession;
-      const duration = date-id;
+      const duration = date-sessions[id].start;
 
       if(new Date(currentSession).getDay() === new Date(stopTime).getDay()){
         const newTime = new Date(stopTime).toISOString().substring(0, 10);
-        const beginningOfDay = new Date(newTime)
-        console.log(beginningOfDay)
       }
       dispatch(updateSession(id, {end: date, duration: duration}))
 
@@ -87,9 +87,9 @@ const StartBtn = () => {
         dispatch(toggleStartBtn(true));
         dispatch(toggleNoProjectEntered(false));
         const newDate = new Date();
-        const id = newDate.getTime();
-        const start = id;
-        const date = newDate.toISOString().substring(0, 10);
+        const id = generateID();
+        const start = newDate.getTime();
+        const date = parseInt(newDate.toISOString().substring(0, 10).replace('-', '').replace('-', ''));
         setCurrentSession(id);
         
         dispatch(addNewSession(
@@ -117,10 +117,7 @@ const StartBtn = () => {
 
 const clickHandler = () => {
   toggleTimer(); 
-
 }   
-
-
   return(
     <div className={buttonState} onClick={clickHandler}>
       START

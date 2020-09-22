@@ -35,7 +35,7 @@ const DailyCard = (props) => {
     })
   }
 
-  generatePunchArray()
+/*   generatePunchArray() */
 
 
   return(

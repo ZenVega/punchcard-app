@@ -37,7 +37,7 @@ switch(action.type){
         byID: {
           ...state.byID,
           [action.id] : action.payload,
-          projectIDs: state.allIDs.concat(action.id)
+          allIDs: state.allIDs.concat(action.id)
         }
       }
     default:
@@ -61,7 +61,7 @@ const sessionsInitialState = {
   {
     project: "asdsafshf5436357ghe",
     start: 1600334008461,
-    date: "2020-09-17",
+    date: "20200917",
     end: 1600334011206,
     duration: 2745
   },
@@ -69,7 +69,7 @@ const sessionsInitialState = {
   {
     project: "asdsafshf5436357ghe",
     start: 1600334209606,
-    date: "2020-09-17",
+    date: "20200917",
     end: 1600334215014,
     duration: 5408
   },
@@ -77,7 +77,7 @@ const sessionsInitialState = {
   {
     project: "dsaasfdshfdfg5df436357ghe",
     start: 1600335210849,
-    date: "2020-09-17",
+    date: "20200917",
     end: 1600335216485,
     duration: 5636
   },
@@ -85,7 +85,7 @@ const sessionsInitialState = {
   {
     project: "43635sdf7ghsdesdfsfsd",
     start: 1600335626162,
-    date: "2020-09-17",
+    date: "20200917",
     end: 1600335635792,
     duration: 9630
   },
@@ -93,7 +93,7 @@ const sessionsInitialState = {
   {
     project: "dsaasfdshfdfg5df436357ghe",
     start: 1600337504577,
-    date: "2020-09-17",
+    date: "20200917",
     end: 1600337511945,
     duration: 7368
   },
@@ -101,7 +101,7 @@ const sessionsInitialState = {
   {
     project: "asdsafshf5436357ghe",
     start: 1600338516253,
-    date: "2020-09-17",
+    date: "20200917",
     end: 1600338524341,
     duration: 8088
   },
@@ -109,7 +109,7 @@ const sessionsInitialState = {
   {
     project: "sshasdadaf5436357ghe",
     start: 1600431988059,
-    date: "2020-09-18",
+    date: "20200918",
     end: 1600431994244,
     duration: 6185
   },
@@ -117,7 +117,7 @@ const sessionsInitialState = {
   {
     project: "dsaasfdshfdfg5df436357ghe",
     start: 1600436911532,
-    date: "2020-09-18",
+    date: "20200918",
     end: 1600436914813,
     duration: 3281
   },
@@ -125,7 +125,7 @@ const sessionsInitialState = {
   {
     project: "43635sdf7ghsdesdfsfsd",
     start: 1600524017985,
-    date: "2020-09-19",
+    date: "20200919",
     end: 1600524022239,
     duration: 4254
   },
@@ -133,7 +133,7 @@ const sessionsInitialState = {
   {
     project: "asdsafshf5436357ghe",
     start: 1600532892054,
-    date: "2020-09-19",
+    date: "20200919",
     end: 1600533505889,
     duration: 613835
   },
@@ -150,9 +150,9 @@ export const sessions = (state = sessionsInitialState, action) => {
         ...state, 
         byID:{ 
           ...state.byID,
-          [action.id] : action.payload,
-          allIDs: state.allIDs.concat(action.id)
-        }
+          [action.id] : action.payload
+        },
+        allIDs: state.allIDs.concat(action.id)
       }
       
     case 'UPDATE_SESSION':
@@ -199,15 +199,18 @@ const dailyCardsInitialState = {
   cardIDs:['20200917','20200916']
 }
 
-export const dailyCards = (state = dailyCardsInitialState, action) => {
+export const daysDisplayed = (state = [], action) => {
 switch(action.type){
-  case 'ADD_DAILY_CARD':
+  case 'ADD_DAY_TO_DISPLAY':
       return {
         ...state, 
-          [action.id] : action.payload,
-          cardIDs: action.id.concat(state.cardIDs)
+          daysDisplayed : {
+            ...state.daysDisplayed.concat(action.payload)
+          }
+          
       }
     default:
       return state
     }
 }
+

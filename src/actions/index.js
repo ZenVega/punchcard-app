@@ -114,10 +114,9 @@ export const removeSession = (id) => {
   }
 }
 
-export const addDailyCard = (id, obj) => {
+export const addDaysToDisplay = obj => {
   return{
-    type: 'ADD_DAILY_CARD',
-    id,
+    type: 'ADD_DAY_TO_DISPLAY',
     payload: obj
   }
 }

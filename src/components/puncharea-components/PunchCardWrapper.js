@@ -5,22 +5,21 @@ import DailyCard from './DailyCard'
 import ActivePunchCard from './ActivePunchCard'
 
 const PunchCardWrapper = () => {
-  
-  const cardIDs = useSelector(state => state.entities.dailyCards.cardIDs);
+
   const [cardsLoaded, setCardsLoaded] = useState([]);
   const [formerCardIDs, setFormerCardIDs] = useState([]);
   
   
   useEffect(() => {
-    checkForChanges();
-    loadDailyCards();
+/*     checkForChanges(); */
+/*     loadDailyCards(); */
     
     return () => {
       
     }
   })
   
-  const loadDailyCards = () => {
+  /* const loadDailyCards = () => {
     let cardsToLoad = [];
     const maximum = cardIDs.length;
     const lastDayLoaded = cardsLoaded.length === 0?undefined:cardsLoaded[cardsLoaded.length-1];
@@ -40,23 +39,23 @@ const PunchCardWrapper = () => {
         }
       }
     }
-  }
-
+  } */
+/* 
   const checkForChanges = () => {
     if(formerCardIDs !==cardIDs){
       setCardsLoaded([])
     }
     setFormerCardIDs(cardIDs);
-  }
+  } */
 
   return(
     <div className="punch-card-wrapper">
       <ActivePunchCard/>
-      {cardsLoaded && cardsLoaded.map( (card, index) => (
+      {/* {cardsLoaded && cardsLoaded.map( (card, index) => (
       <DailyCard
         key = {index}
         id = {card}/>
-      ))}
+      ))} */}
     </div>
   )
 }
