@@ -72,7 +72,7 @@ const StartBtn = () => {
       const duration = date-sessions[id].start;
 
       if(new Date(currentSession).getDay() === new Date(stopTime).getDay()){
-        const newTime = new Date(stopTime).toISOString().substring(0, 10);
+/*         const newTime = new Date(stopTime).toISOString().substring(0, 10); */
       }
       dispatch(updateSession(id, {end: date, duration: duration}))
 

@@ -6,10 +6,10 @@ import PunchedHole from './PunchedHole';
 const DailyCard = (props) => {
 
   const card = useSelector(state => state.entities.dailyCards[props.id]);
-  const allSessions = useSelector(state => state.entities.sessions.byID);
+/*   const allSessions = useSelector(state => state.entities.sessions.byID); */
   let dailySequence = [];
 
-  
+/*   
   const generatePunchArray = () => {
     //generate fragments for that day
     const start = card.start;
@@ -35,7 +35,7 @@ const DailyCard = (props) => {
     })
   }
 
-/*   generatePunchArray() */
+  generatePunchArray() */
 
 
   return(

@@ -188,7 +188,7 @@ export const sessions = (state = sessionsInitialState, action) => {
         return state
   }
 }
-
+/* 
 const dailyCardsInitialState = {
   '20200917':
   {
@@ -222,3 +222,4 @@ switch(action.type){
     }
 }
 
+ */

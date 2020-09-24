@@ -1,24 +1,24 @@
-import React, {useEffect, useState} from 'react'
-import { useSelector } from 'react-redux';
+import React from 'react'
+
 import './PunchArea.css'
-import DailyCard from './DailyCard'
 import ActivePunchCard from './ActivePunchCard'
 
-const PunchCardWrapper = () => {
 
+const PunchCardWrapper = () => {
+/* 
   const [cardsLoaded, setCardsLoaded] = useState([]);
   const [formerCardIDs, setFormerCardIDs] = useState([]);
   
   
   useEffect(() => {
-/*     checkForChanges(); */
-/*     loadDailyCards(); */
+     checkForChanges(); 
+    loadDailyCards(); 
     
     return () => {
       
     }
   })
-  
+   */
   /* const loadDailyCards = () => {
     let cardsToLoad = [];
     const maximum = cardIDs.length;

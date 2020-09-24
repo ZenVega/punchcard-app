@@ -1,6 +1,6 @@
 import React from 'react';
 import './PunchArea.css'
-import PunchedHole from './PunchedHole';
+
 
 const ActivePunchCard = (props) => {
   const dateToday = new Date().toString().slice(0,15);
