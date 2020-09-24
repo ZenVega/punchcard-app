@@ -137,8 +137,16 @@ const sessionsInitialState = {
     end: 1600533505889,
     duration: 613835
   },
+  'fc69925d-376e-404a-a222-af5e783bbc1f':
+  {
+    project: "43635sdf7ghsdesdfsfsd",
+    start: 1600954193405,
+    date: 20200924,
+    end: 1600954196048,
+    duration: 2643
   },
-  allIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532', '1600524017985', '1600532892054']
+  },
+  allIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532', '1600524017985', '1600532892054','fc69925d-376e-404a-a222-af5e783bbc1f']
 }
 
 
@@ -161,7 +169,7 @@ export const sessions = (state = sessionsInitialState, action) => {
         byID:{ 
           ...state.byID, 
           [action.id] : {
-            ...state[action.id],
+            ...state.byID[action.id],
             end: action.payload.end,
             duration: action.payload.duration
           }

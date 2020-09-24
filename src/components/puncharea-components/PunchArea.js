@@ -1,14 +1,17 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, connect } from 'react-redux';
 import './PunchArea.css'
-import {getPastWorkdays} from '../../selectors/index'
 import { daysDisplayed } from '../../actions';
 import PunchCardWrapper from './PunchCardWrapper';
 import { v4 as generateID } from 'uuid';
+import {sessionsOlderThanToday} from '../../selectors/index'
 
 
 const PunchArea = () => {
-  console.log(getPastWorkdays);
+  const state = useSelector(state => state)
+
+  console.log(sessionsOlderThanToday(state))
+  
   const durationDay = 86400000;
 
   const dispatch = useDispatch();
@@ -69,4 +72,5 @@ const PunchArea = () => {
   )
 }
 
-export default PunchArea;
+
+export default PunchArea
