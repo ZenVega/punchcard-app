@@ -89,7 +89,7 @@ const StartBtn = () => {
         const newDate = new Date();
         const id = generateID();
         const start = newDate.getTime();
-        const date = parseInt(newDate.toISOString().substring(0, 10).replace('-', '').replace('-', ''));
+        const date = newDate.toISOString().substring(0, 10).replace('-', '').replace('-', '');
         setCurrentSession(id);
         
         dispatch(addNewSession(

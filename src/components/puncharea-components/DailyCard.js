@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import './PunchArea.css'
 import PunchedHole from './PunchedHole';
+import {getSessionsOnDay, getPunchArray} from '../../selectors/index'
 
 const DailyCard = (props) => {
 
-  const card = useSelector(state => state.entities.dailyCards[props.id]);
-/*   const allSessions = useSelector(state => state.entities.sessions.byID); */
-  let dailySequence = [];
+  const sessionOnDay = useSelector(state => getSessionsOnDay(state, props.day));
+  console.log(sessionOnDay)
 
+
+
+
+
+  const datePattern = props.day.slice(0,4) + '-' + props.day.slice(4,6) + '-' + props.day.slice(6,8)
+  const dateToday = new Date(datePattern);
+  const dateStringToRender = dateToday.toString().slice(0,10)
+  
+
+
+
+/*     export const getPunchArray = (state, day) => {
+      const sessions = getSessionsOnDay(state, day);
+      let dailySequence = new Array(288);
+      console.log(sessions)
+    }
+  }, [props.day]); */
 /*   
   const generatePunchArray = () => {
     //generate fragments for that day
@@ -40,15 +57,15 @@ const DailyCard = (props) => {
 
   return(
     <div className="daily-card">
-      <h3 className="date-tag">{card.date}</h3>
+      <h3 className="date-tag">{dateStringToRender}</h3>
       <div className="daily-punch">
-        {dailySequence.map((digit, index) => {
+        {/* {dailySequence.map((digit, index) => {
           if(digit === 0){
             return <PunchedHole key={index} status="punched-hole-active"/>
           } else {
             return <PunchedHole key={index} status="punched-hole"/>
           }
-        })}
+        })} */}
       </div>
     </div> 
   )

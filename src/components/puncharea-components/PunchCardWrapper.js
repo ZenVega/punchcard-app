@@ -1,61 +1,26 @@
-import React from 'react'
-
+import React, {useState} from 'react'
 import './PunchArea.css'
 import ActivePunchCard from './ActivePunchCard'
+import DailyCard from './DailyCard'
+import {getWorkingDays} from '../../selectors'
+import {useSelector} from 'react-redux'
+
 
 
 const PunchCardWrapper = () => {
-/* 
-  const [cardsLoaded, setCardsLoaded] = useState([]);
-  const [formerCardIDs, setFormerCardIDs] = useState([]);
-  
-  
-  useEffect(() => {
-     checkForChanges(); 
-    loadDailyCards(); 
-    
-    return () => {
-      
-    }
-  })
-   */
-  /* const loadDailyCards = () => {
-    let cardsToLoad = [];
-    const maximum = cardIDs.length;
-    const lastDayLoaded = cardsLoaded.length === 0?undefined:cardsLoaded[cardsLoaded.length-1];
-    
-    if(!lastDayLoaded){
-      for(let i = 0; i < maximum; i++){
-        cardsToLoad.push(cardIDs[i])
-      }
-      setCardsLoaded(cardsToLoad)
-    } else if(lastDayLoaded === cardIDs[0]){
-      return;
-    } else {
-      const index = cardIDs.findIndex(id => id === lastDayLoaded)+1;
-      for(let i = index; i < index+5; i++){
-        if(cardIDs[i]){
-          setCardsLoaded([...cardsLoaded,cardIDs[i]])
-        }
-      }
-    }
-  } */
-/* 
-  const checkForChanges = () => {
-    if(formerCardIDs !==cardIDs){
-      setCardsLoaded([])
-    }
-    setFormerCardIDs(cardIDs);
-  } */
 
+  const workingDays = useSelector(state => getWorkingDays(state));
+  const lastFive = workingDays.length>3? workingDays.slice(0,3):workingDays.slice(0,workingDays.length);
+  const [daysLoaded, setDaysLoaded] = useState(lastFive);
+  
   return(
     <div className="punch-card-wrapper">
       <ActivePunchCard/>
-      {/* {cardsLoaded && cardsLoaded.map( (card, index) => (
+      {daysLoaded && daysLoaded.map((day, index) => (
       <DailyCard
         key = {index}
-        id = {card}/>
-      ))} */}
+        day = {day}/>
+      ))}
     </div>
   )
 }

@@ -57,96 +57,104 @@ switch(action.type){
 
 const sessionsInitialState = {
   byID:{
-    '1600334008461':
-  {
-    project: "asdsafshf5436357ghe",
-    start: 1600334008461,
-    date: "20200917",
-    end: 1600334011206,
-    duration: 2745
+      '1600334008461':
+    {
+      project: "asdsafshf5436357ghe",
+      start: 1600334008461,
+      date: "20200917",
+      end: 1600334011206,
+      duration: 2745
+    },
+    '1600334209606':
+    {
+      project: "asdsafshf5436357ghe",
+      start: 1600334209606,
+      date: "20200917",
+      end: 1600334215014,
+      duration: 5408
+    },
+    '1600335210849':
+    {
+      project: "dsaasfdshfdfg5df436357ghe",
+      start: 1600335210849,
+      date: "20200917",
+      end: 1600335216485,
+      duration: 5636
+    },
+    '1600335626162':
+    {
+      project: "43635sdf7ghsdesdfsfsd",
+      start: 1600335626162,
+      date: "20200917",
+      end: 1600335635792,
+      duration: 9630
+    },
+    '1600337504577':
+    {
+      project: "dsaasfdshfdfg5df436357ghe",
+      start: 1600337504577,
+      date: "20200917",
+      end: 1600337511945,
+      duration: 7368
+    },
+    '1600338516253':
+    {
+      project: "asdsafshf5436357ghe",
+      start: 1600338516253,
+      date: "20200917",
+      end: 1600338524341,
+      duration: 8088
+    },
+    '1600431988059':
+    {
+      project: "sshasdadaf5436357ghe",
+      start: 1600431988059,
+      date: "20200918",
+      end: 1600431994244,
+      duration: 6185
+    },
+    '1600436911532':
+    {
+      project: "dsaasfdshfdfg5df436357ghe",
+      start: 1600436911532,
+      date: "20200918",
+      end: 1600436914813,
+      duration: 3281
+    },
+    '1600524017985':
+    {
+      project: "43635sdf7ghsdesdfsfsd",
+      start: 1600524017985,
+      date: "20200919",
+      end: 1600524022239,
+      duration: 4254
+    },
+    '1600532892054':
+    {
+      project: "asdsafshf5436357ghe",
+      start: 1600532892054,
+      date: "20200919",
+      end: 1600533505889,
+      duration: 613835
+    },
+    'fc69925d-376e-404a-a222-af5e783bbc1f':
+    {
+      project: "43635sdf7ghsdesdfsfsd",
+      start: 1600954193405,
+      date: "20200924",
+      end: 1600954196048,
+      duration: 2643
+    },
+    'hf3654edst-376e-404a-a222-af5e783bbc1f':
+    {
+      project: "dsaasfdshfdfg5df436357ghe",
+      start: 1601023051254,
+      date: "20200925",
+      end: 1601023057341,
+      duration: 6087
+    },
   },
-  '1600334209606':
-  {
-    project: "asdsafshf5436357ghe",
-    start: 1600334209606,
-    date: "20200917",
-    end: 1600334215014,
-    duration: 5408
-  },
-  '1600335210849':
-  {
-    project: "dsaasfdshfdfg5df436357ghe",
-    start: 1600335210849,
-    date: "20200917",
-    end: 1600335216485,
-    duration: 5636
-  },
-  '1600335626162':
-  {
-    project: "43635sdf7ghsdesdfsfsd",
-    start: 1600335626162,
-    date: "20200917",
-    end: 1600335635792,
-    duration: 9630
-  },
-  '1600337504577':
-  {
-    project: "dsaasfdshfdfg5df436357ghe",
-    start: 1600337504577,
-    date: "20200917",
-    end: 1600337511945,
-    duration: 7368
-  },
-  '1600338516253':
-  {
-    project: "asdsafshf5436357ghe",
-    start: 1600338516253,
-    date: "20200917",
-    end: 1600338524341,
-    duration: 8088
-  },
-  '1600431988059':
-  {
-    project: "sshasdadaf5436357ghe",
-    start: 1600431988059,
-    date: "20200918",
-    end: 1600431994244,
-    duration: 6185
-  },
-  '1600436911532':
-  {
-    project: "dsaasfdshfdfg5df436357ghe",
-    start: 1600436911532,
-    date: "20200918",
-    end: 1600436914813,
-    duration: 3281
-  },
-  '1600524017985':
-  {
-    project: "43635sdf7ghsdesdfsfsd",
-    start: 1600524017985,
-    date: "20200919",
-    end: 1600524022239,
-    duration: 4254
-  },
-  '1600532892054':
-  {
-    project: "asdsafshf5436357ghe",
-    start: 1600532892054,
-    date: "20200919",
-    end: 1600533505889,
-    duration: 613835
-  },
-  'fc69925d-376e-404a-a222-af5e783bbc1f':
-  {
-    project: "43635sdf7ghsdesdfsfsd",
-    start: 1600954193405,
-    date: 20200924,
-    end: 1600954196048,
-    duration: 2643
-  },
-  },
-  allIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532', '1600524017985', '1600532892054','fc69925d-376e-404a-a222-af5e783bbc1f']
+  allIDs:['1600334008461', '1600334209606', '1600335210849','1600335626162','1600337504577','1600338516253', '1600431988059', '1600436911532', '1600524017985', '1600532892054','fc69925d-376e-404a-a222-af5e783bbc1f', 'hf3654edst-376e-404a-a222-af5e783bbc1f']
 }
 
 
