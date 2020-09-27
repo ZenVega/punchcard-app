@@ -8,7 +8,7 @@ const DailyCard = (props) => {
 
 
   const day = props.day
-  const sessionOnDay = useSelector(createObjectWithDailySessions(props.day));
+  const sessionOnDay = useSelector(getPunchArray(props.day));
   console.log(sessionOnDay)
 
 

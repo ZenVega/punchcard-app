@@ -59,26 +59,38 @@ export const getSessionsOnDay = day => createSelector(
   [state],
   (state) => {
     const getWDays = getWorkdaysIncludingSessions;
-    console.log(getWDays(state)[day])
     return getWDays(state)[day]
   }
 )
 
 export const createObjectWithDailySessions = (day) => createSelector(
-  [sessionsOlderThanToday,getWorkdaysIncludingSessions],
-  (olderSessions, WDincludingSessions) => {
-    const sessionOnDay = useSelector(getSessionsOnDay(day))
+  [sessionsOlderThanToday],
+  (olderSessions) => {
+    const sessionOnDay = useSelector(getWorkdaysIncludingSessions)
     let sessions = {};
-    sessionOnDay.map(id => sessions[id] = olderSessions[id])
-    console.log(sessions)
+    sessionOnDay[day].map(id => sessions[id] = olderSessions[id])
     return sessions
   }
 )
-/* 
-export const getPunchArray = (state, day) => {
-  const sessions = getSessionsOnDay(state, day);
-  let dailySequence = new Array(288);
-  console.log(sessions)
-}
 
- */
+export const getPunchArray = (day) => createSelector(
+  [],
+  () => {
+
+    const getObjWithSessions = useMemo(createObjectWithDailySessions, [])
+
+    const sessionIDs = useSelector(getSessionsOnDay(day))
+    const sessions = useSelector(createObjectWithDailySessions(day));
+    let dailySequence = new Array(288);
+    const dateString = new Date(sessions[(sessionIDs[0])].start).toString().slice(0,15)
+    const beginningOfDay = new Date(dateString).getTime()
+    console.log(beginningOfDay)
+  }
+)
+
+
+/* {
+  const sessions = getSessionsOnDay(state, day);
+  console.log(sessions)
+} */
+
