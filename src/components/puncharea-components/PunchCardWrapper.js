@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux'
 const PunchCardWrapper = () => {
 
   const workingDays = useSelector(state => getWorkingDays(state));
-  const lastFive = workingDays.length>3? workingDays.slice(0,3):workingDays.slice(0,workingDays.length);
+  const lastFive = workingDays.length>5? workingDays.slice(0,3):workingDays.slice(0,workingDays.length);
   const [daysLoaded, setDaysLoaded] = useState(lastFive);
   
   return(

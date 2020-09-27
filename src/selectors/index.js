@@ -1,10 +1,13 @@
+import { useMemo } from 'react'
 import { createSelector } from 'reselect'
+import { useSelector } from 'react-redux';
 /* 
 const projectIDselector = state => state.entities.projects.allIDs;
 const projectSelector = state => state.entities.projects.byID;
 const daysDisplayed = state => state.entities.daysDisplayed;
  */
 
+const state = state => state
 const sessionIDselector = state => state.entities.sessions.allIDs;
 const sessionSelector = state => state.entities.sessions.byID;
 
@@ -51,15 +54,27 @@ export const getWorkdaysIncludingSessions = createSelector(
   }
 )
 
-//Is that necessary and correct to memoize properly? 
-//This is supposed to be called multible times?
-export const getSessionsOnDay = (state, day) => {
-  const getWDays = getWorkdaysIncludingSessions;
-  return getWDays(state)[day]
-}
 
+export const getSessionsOnDay = day => createSelector(
+  [state],
+  (state) => {
+    const getWDays = getWorkdaysIncludingSessions;
+    console.log(getWDays(state)[day])
+    return getWDays(state)[day]
+  }
+)
+
+export const createObjectWithDailySessions = (day) => createSelector(
+  [sessionsOlderThanToday,getWorkdaysIncludingSessions],
+  (olderSessions, WDincludingSessions) => {
+    const sessionOnDay = useSelector(getSessionsOnDay(day))
+    let sessions = {};
+    sessionOnDay.map(id => sessions[id] = olderSessions[id])
+    console.log(sessions)
+    return sessions
+  }
+)
 /* 
-
 export const getPunchArray = (state, day) => {
   const sessions = getSessionsOnDay(state, day);
   let dailySequence = new Array(288);

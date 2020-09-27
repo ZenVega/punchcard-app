@@ -2,11 +2,13 @@ import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import './PunchArea.css'
 import PunchedHole from './PunchedHole';
-import {getSessionsOnDay, getPunchArray} from '../../selectors/index'
+import {createObjectWithDailySessions, getSessionsOnDay, getPunchArray} from '../../selectors/index'
 
 const DailyCard = (props) => {
 
-  const sessionOnDay = useSelector(state => getSessionsOnDay(state, props.day));
+
+  const day = props.day
+  const sessionOnDay = useSelector(createObjectWithDailySessions(props.day));
   console.log(sessionOnDay)
 
 
